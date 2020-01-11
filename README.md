@@ -12,6 +12,12 @@ commands in the built in meet chat.
 - Change layout, pin users, mute/unmute mic/video using chat commands
 - Automatically pick layout on start
 
+## Screencast
+
+[![Screencast](https://img.youtube.com/vi/PUk6jNOl1oE/0.jpg)](https//www.youtube.com/watch?v=PUk6jNOl1oE "Screencast")
+
+www.youtube.com/watch?v=PUk6jNOl1oE
+
 ## Requirements
 
 - linux
