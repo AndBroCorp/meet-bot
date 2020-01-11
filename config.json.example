@@ -1,5 +1,6 @@
 {
   "password": "123",
   "email": "example@gmail.com",
-  "meeting": "yoo-meet-code"
+  "meeting": "yoo-meet-code",
+  "layout": "spotlight"
 }
