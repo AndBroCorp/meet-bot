@@ -1,5 +1,5 @@
 import { Page } from 'puppeteer'
-import config from './config'
+import args from './args'
 
 export async function isOnswitchAccountView(page: Page) {
   const truePromise = page
@@ -31,17 +31,16 @@ export async function getLoginState(page: Page) {
 }
 
 export async function login(page: Page) {
-  await page.type('[type="password"]', config.password)
   if (await isOnswitchAccountView(page)) {
     const element = await page.waitForXPath("//div[.='Use another account']")
     await page.evaluate(el => el.click(), element)
   }
   await page.waitFor(() => !document.querySelector('[aria-busy="true"]'))
   await page.waitForSelector('[type="email"]')
-  await page.type('[type="email"]', config.email)
+  await page.type('[type="email"]', args.email)
   await page.keyboard.press('Enter')
   await page.waitForSelector('[type="password"]')
   await page.waitFor(() => !document.querySelector('[aria-busy="true"]'))
-  await page.type('[type="password"]', config.password)
+  await page.type('[type="password"]', args.password)
   await page.keyboard.press('Enter')
 }

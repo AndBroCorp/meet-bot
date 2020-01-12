@@ -1,8 +1,7 @@
 import puppeteer from 'puppeteer-extra'
 import childProcess from 'child_process'
 import { promisify } from 'util'
-import path from 'path'
-import config from './config'
+import args from './args'
 
 const exec = promisify(childProcess.exec)
 
@@ -19,12 +18,11 @@ export default async function launchBrowser() {
   if (!chromePath) {
     throw new Error('chrome not found')
   }
-  const userDataDir = path.join(__dirname, '..', '.user-data')
-  const url = `https://meet.google.com/${config.meeting}`
+  const url = `https://meet.google.com/${args['meet-id']}`
   const browser = await puppeteer.launch({
     headless: false,
     executablePath: chromePath,
-    userDataDir,
+    userDataDir: args['user-data-dir'],
     args: [
       '--no-sandbox',
       '--start-fullscreen',

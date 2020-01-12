@@ -2,20 +2,36 @@
   "name": "meet-bot",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "start": "node .",
-    "build": "tsc",
-    "watch": "tsc --watch"
+    "build": "./build.sh",
+    "watch": "tsc --watch",
+    "prepublish": "./build.sh"
   },
+  "bin": {
+    "meet-bot": "./dist/index.js"
+  },
+  "man": "./dist/meet-bot.1",
   "dependencies": {
-    "@types/node": "^13.1.6",
-    "prettier": "^1.19.1",
     "puppeteer": "^2.0.0",
     "puppeteer-extra": "^3.1.9",
     "puppeteer-extra-plugin-stealth": "^2.4.9",
     "puppeteer-extra-plugin-user-data-dir": "^2.2.4",
     "puppeteer-extra-plugin-user-preferences": "^2.2.4",
+    "yargs": "^15.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.6",
+    "@types/yargs": "^15.0.0",
+    "add-shebang": "^0.1.0",
+    "marked": "^0.6.2",
+    "marked-man": "0.6.0",
+    "prettier": "^1.19.1",
     "typescript": "^3.7.4"
-  }
+  },
+  "files": [
+    "dist/*"
+  ]
 }

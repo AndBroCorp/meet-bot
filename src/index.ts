@@ -1,12 +1,12 @@
 import StealthPlugin from 'puppeteer-extra-plugin-stealth'
-import config from './config'
 import launchBrowser from './launchBrowser'
 import puppeteer from 'puppeteer-extra'
 import waitForClick from './waitForClick'
 import { Page } from 'puppeteer'
-import { isLayoutKey, setLayout } from './layout'
+import { setLayout } from './layout'
 import { login, getLoginState } from './login'
 import { sendChatMessage, waitForChatMessage, processChatMessage } from './chat'
+import args from './args'
 // @ts-ignore
 import UserPreferencesPlugin from 'puppeteer-extra-plugin-user-preferences'
 
@@ -71,13 +71,8 @@ async function run(page: Page) {
   await waitForClick(page, '[aria-label="Join meeting"]')
   await page.waitForSelector('[aria-label="Leave call"]')
 
-  if (config.layout) {
-    if (isLayoutKey(config.layout)) {
-      await setLayout(page, config.layout)
-    } else {
-      throw new Error(`Invalid layout: ${config.layout}`)
-    }
-  }
+  await setLayout(page, args.layout)
+
   await sendChatMessage(page, 'Connected')
   console.log('Waiting for chat messages')
 

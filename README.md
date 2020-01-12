@@ -1,4 +1,5 @@
-# Google meet bot
+meet-bot - Google meet bot
+==========================
 
 A puppeteer script to automatically join a google meet room from an unattended
 linux computer. Settings like mic mute and layout can be controlled by typing
@@ -14,9 +15,13 @@ commands in the built in meet chat.
 
 ## Screencast
 
+<<<<<<< HEAD
 [![Screencast](https://img.youtube.com/vi/PUk6jNOl1oE/0.jpg)](https//www.youtube.com/watch?v=PUk6jNOl1oE "Screencast")
 
 www.youtube.com/watch?v=PUk6jNOl1oE
+=======
+[![Screencast](http://img.youtube.com/vi/PUk6jNOl1oE/0.jpg)](http://www.youtube.com/watch?v=PUk6jNOl1oE "Screencast")
+>>>>>>> Yargs argv parser
 
 ## Requirements
 
@@ -43,19 +48,30 @@ calendar event with the following options to grant access to the meet room:
 - Video conferencing: Add and do not change the generated meeting code
 - Guests: Your bot account
 
-### Installation
+## Usage
+### Running
 
 ```
-git clone git@github.com:JakeHedman/meet-bot.git
-cd meet-bot
-yarn # Install dependencies
-cp config.json.example config.json
-vim config.json # Edit the config file
-yarn build # Compile
-yarn start # Run
+npx meet-bot -e example@gmail.com -p password -m abc-asdf-qwe
 ```
 
-## Commands
+### Help
+
+```
+npx meet-bot --help
+man meet-bot
+```
+
+### Environment variables
+
+Command line options can be replaced with environment variables prefixed with
+`MEET_BOT_`:
+
+```sh
+env MEET_BOT_PASSWORD=hunter2 npx meet-bot -e example@gmail.com -m abc-asdf-qwe
+```
+
+## Chat commands
 
 **/pin <x>**
 
@@ -100,5 +116,3 @@ Example: `/layout spotlight` - Change layout to spotlight
 - Switch camera / mic device command
 - Repeat latest chat messages command
 - "Ask to join" (without google account)
-- Better config handling (command line flags, env vars, password-store support)
-- Publish to npm for "npx meet-bot"
