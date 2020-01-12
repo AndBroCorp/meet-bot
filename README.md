@@ -23,9 +23,7 @@ www.youtube.com/watch?v=PUk6jNOl1oE
 
 - linux
 - google chrome
-- git
 - node.js
-- yarn
 
 ## Setup
 
