@@ -87,7 +87,7 @@ Example: `/mic off` - Turn mic off
 Turn camera on or off
 
 Example: `/cam on` - Turn cam on
-Example: `/cam off` - Turn cam off
+Example: `/cam off` - Turn cam offup
 
 **/layout**
 
@@ -101,3 +101,4 @@ Example: `/layout spotlight` - Change layout to spotlight
 - Repeat latest chat messages command
 - "Ask to join" (without google account)
 - Better config handling (command line flags, env vars, password-store support)
+- Publish to npm for "npx meet-bot"
