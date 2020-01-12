@@ -15,13 +15,9 @@ commands in the built in meet chat.
 
 ## Screencast
 
-<<<<<<< HEAD
-[![Screencast](https://img.youtube.com/vi/PUk6jNOl1oE/0.jpg)](https//www.youtube.com/watch?v=PUk6jNOl1oE "Screencast")
+[![Screencast](https://img.youtube.com/vi/PUk6jNOl1oE/0.jpg)](https://www.youtube.com/watch?v=PUk6jNOl1oE "Screencast")
 
 www.youtube.com/watch?v=PUk6jNOl1oE
-=======
-[![Screencast](http://img.youtube.com/vi/PUk6jNOl1oE/0.jpg)](http://www.youtube.com/watch?v=PUk6jNOl1oE "Screencast")
->>>>>>> Yargs argv parser
 
 ## Requirements
 
