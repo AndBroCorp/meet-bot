@@ -49,17 +49,24 @@ calendar event with the following options to grant access to the meet room:
 - Guests: Your bot account
 
 ## Usage
-### Running
+### Running (without installing)
 
 ```
 npx meet-bot -e example@gmail.com -p password -m abc-asdf-qwe
+```
+
+### Running (installed)
+
+```
+npm install -g meet-bot
+meet-bot -e example@gmail.com -p password -m abc-asdf-qwe
 ```
 
 ### Help
 
 ```
 npx meet-bot --help
-man meet-bot
+man meet-bot # If installed
 ```
 
 ### Environment variables
