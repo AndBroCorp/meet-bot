@@ -20,45 +20,13 @@ export async function processCommand(
       )
     }
   } else if (command === 'mic') {
-    const arg = args[0]
-    const micOn = !(await page.$('[aria-label="Turn on microphone"]'))
-    if (arg === 'on') {
-      if (micOn) {
-        throw new Error('Microphone is already on')
-      }
-      await waitForClick(page, '[aria-label="Turn on microphone"]', {
-        timeout: 500,
-      })
-    } else if (arg === 'off') {
-      if (!micOn) {
-        throw new Error('Microphone is already off')
-      }
-      await waitForClick(page, '[aria-label="Turn off microphone"]', {
-        timeout: 500,
-      })
-    } else {
-      await sendChatMessage(page, `Usage: /mic <on|off>`)
-    }
+    await page.keyboard.down('Control');
+    await page.keyboard.press('KeyD');
+    await page.keyboard.up('Control');
   } else if (command === 'cam') {
-    const arg = args[0]
-    const camOn = !(await page.$('[aria-label="Turn on camera"]'))
-    if (arg === 'on') {
-      if (camOn) {
-        throw new Error('Camera is already on')
-      }
-      await waitForClick(page, '[aria-label="Turn on camera"]', {
-        timeout: 500,
-      })
-    } else if (arg === 'off') {
-      if (!camOn) {
-        throw new Error('Camera is already off')
-      }
-      await waitForClick(page, '[aria-label="Turn off camera"]', {
-        timeout: 500,
-      })
-    } else {
-      await sendChatMessage(page, `Usage: /cam <on|off>`)
-    }
+    await page.keyboard.down('Control');
+    await page.keyboard.press('KeyE');
+    await page.keyboard.up('Control');
   } else if (command === 'restart') {
     await waitForClick(page, '[aria-label="Leave call"]')
     throw new Error('RESTART')
