@@ -94,17 +94,15 @@ Get a list of commands
 
 **/mic**
 
-Turn mic on or off
+Toogle mic on or off
 
-Example: `/mic on` - Turn mic on
-Example: `/mic off` - Turn mic off
+Example: `/mic`
 
 **/cam**
 
-Turn camera on or off
+Toggle camera on or off
 
-Example: `/cam on` - Turn cam on
-Example: `/cam off` - Turn cam offup
+Example: `/cam`
 
 **/layout**
 
